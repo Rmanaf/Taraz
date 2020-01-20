@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fa_IR" class="auto-fix">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- bootstrap 4.x -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- sahel-font 3.3 -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.rawgit.com/rastikerdar/sahel-font/v3.3.0/dist/font-face.css" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./style.css" />
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./latest/jquery.taraz-currency.min.js"></script>
+    <script type="text/javascript" src="./latest/jquery.taraz-digits.min.js"></script>
+
+    <title>Taraz Demo</title>
+
+    <style>
+        [lang="fa_IR"] body,
+        [lang="fa"] body {
+            text-align: right;
+            font-family: "Sahel" !important;
+        }
+
+        [lang="fa_IR"] .fix-rtl {
+            direction: rtl;
+        }
+
+        code {
+            display: block;
+            background: #002e32;
+            padding: 30px;
+            color: wheat;
+        }
+
+        .font-sahel {
+            font-family: "Sahel" !important;
+        }
+
+        .github-fork {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <a class="github-fork" href="https://github.com/you"><img width="149" height="149"
+            src="https://github.blog/wp-content/uploads/2008/12/forkme_left_white_ffffff.png?resize=149%2C149"
+            class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    <div class="container">
+
+        <div class="row my-5">
+            <div class="col-12">
+                <h1>
+                    <strong>
+                        تراز
+                    </strong>
+                </h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 mb-2">
+                <div id="digits" class="card">
+                    <div class="card-header">
+                        افزونه ارقام
+                    </div>
+                    <div class="card-body">
+                        <h5> روش استفاده </h5>
+                        <p class="card-text">
+                            کتابخانه "تراز" را به برگه اضافه کنید
+
+                            <p class="my-5 text-left">
+                                <code>
+                                    &lt;head&gt;
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://rmanaf.github.io/taraz/latest/jquery.taraz-digits.min.js&quot;&gt;&lt;/script&gt;
+                                    <br>
+                                    &lt;/head&gt;
+                                </code>
+                            </p>
+
+                        </p>
+
+                        <h5 class="fix-rtl my-3">روش اول بدون استفاده از <b>javascript</b></h5>
+                        <ul class="fix-rtl">
+                            <li>
+                                <p>
+                                    کلاس <b>auto-fix</b> را به تگ <b>html</b> اضافه کنید
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    به بخش موردنظر کلاس <b>fix-digits</b> را اضافه کنید
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    پس از بارگذاری برگه اعداد داخل متن پارسی می شوند
+                                </p>
+                            </li>
+                        </ul>
+                        <p class="my-5 text-left">
+                            <code>
+                                &lt;html lang=&quot;fa_IR&quot; class=&quot;auto-fix&quot;&gt;<br />
+                                &nbsp;&nbsp; &nbsp;...<br />
+                                &nbsp;&nbsp; &nbsp;&lt;span class=&quot;fix-digits&quot; &gt;10000&lt;/span&gt;<br />
+                                &nbsp;&nbsp; &nbsp;...<br />
+                                &lt;/html&gt;
+                            </code>
+                        </p>
+                        <hr>
+                        <p>
+                            برای فیلد ها
+                            <input class="form-control fix-digits" value="1200456771299">
+                        </p>
+                        <p class="fix-digits mb-4">
+                            و در متن ها
+                            <span >1200456771299</span>
+                        </p>
+                        <hr>
+                        <h5 class="my-3">
+                            روش دوم با استفاده از متد تراز
+                        </h5>
+                        <p class="my-5 text-left">
+                            <code>$.fn.taraz(["digits"])</code>
+                        </p>
+                        <p class="fix-rtl">
+                            و یا با انتخاب تگ بدون نیاز به کلاس <b>fix-digits</b>
+                        </p>
+                        <p class="my-5 text-left">
+                            <code>
+                                $("&lt;selector&gt;").taraz(["digits"]);
+                            </code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 mb-2">
+                <div id="currency" class="card">
+                    <div class="card-header">
+                        افزونه مبلغ
+                    </div>
+                    <div class="card-body">
+                        <h5> روش استفاده </h5>
+                        <p class="card-text">
+                            کتابخانه "تراز" را به برگه اضافه کنید
+
+                            <p class="my-5 text-left">
+                                <code>
+                                    &lt;head&gt;
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://rmanaf.github.io/taraz/latest/jquery.taraz-currency.min.js&quot;&gt;&lt;/script&gt;
+                                    <br>
+                                    &lt;/head&gt;
+                                </code>
+                            </p>
+
+                        </p>
+
+                        <h5 class="fix-rtl my-3">روش اول بدون استفاده از <b>javascript</b></h5>
+                        <ul class="fix-rtl">
+                            <li>
+                                <p>
+                                    کلاس <b>auto-fix</b> را به تگ <b>html</b> اضافه کنید
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    به بخش موردنظر کلاس <b>fix-currency</b> را اضافه کنید
+                                </p>
+                            </li>
+                        </ul>
+                        <p class="my-5 text-left">
+                            <code>
+                                &lt;html class=&quot;auto-fix&quot;&gt;<br />
+                                &nbsp;&nbsp; &nbsp;...<br />
+                                &nbsp;&nbsp; &nbsp;&lt;span class=&quot;fix-currency&quot; &gt;10000&lt;/span&gt;<br />
+                                &nbsp;&nbsp; &nbsp;...<br />
+                                &lt;/html&gt;
+                            </code>
+                        </p>
+                        <hr>
+                        <p>
+                            برای فیلد ها
+                            <input class="form-control fix-currency" value="1200456771299">
+                        </p>
+                        <p class="fix-currency mb-4">
+                            و در متن ها
+                            <span >1200456771299</span>
+                        </p>
+                        <hr>
+                        <h5 class="my-3">
+                            روش دوم با استفاده از متد تراز
+                        </h5>
+                        <p class="my-5 text-left">
+                            <code>$.fn.taraz(["currency"])</code>
+                        </p>
+                        <p class="fix-rtl">
+                            و یا با انتخاب تگ بدون نیاز به کلاس <b>fix-currency</b>
+                        </p>
+                        <p class="my-5 text-left">
+                            <code>
+                                $("&lt;selector&gt;").taraz(["currency"]);
+                            </code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 mb-2">
+                <div id="currency" class="card">
+                    <div class="card-header">
+                        چند افزونه همزمان
+                    </div>
+                    <div class="card-body">
+                        <h5> روش استفاده </h5>
+                        <p class="card-text">
+                            کتابخانه ها را به برگه اضافه کنید
+
+                            <p class="my-5 text-left">
+                                <code>
+                                    &lt;head&gt;
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://rmanaf.github.io/taraz/latest/jquery.taraz-currency.min.js&quot;&gt;&lt;/script&gt;
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://rmanaf.github.io/taraz/latest/jquery.taraz-digits.min.js&quot;&gt;&lt;/script&gt;
+                                    <br>
+                                    &lt;/head&gt;
+                                </code>
+                            </p>
+
+                        </p>
+
+                        <h5 class="fix-rtl my-3">روش اول بدون استفاده از <b>javascript</b></h5>
+                        <ul class="fix-rtl">
+                            <li>
+                                <p>
+                                    کلاس <b>auto-fix</b> را به تگ <b>html</b> اضافه کنید
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    به بخش موردنظر کلاس های <b>fix-currency</b> و <b>fix-digits</b> را اضافه کنید
+                                </p>
+                            </li>
+                        </ul>
+                        <p class="my-5 text-left">
+                            <code>
+                                &lt;html lang=&quot;fa_IR&quot; class=&quot;auto-fix&quot;&gt;<br />
+                                &nbsp;&nbsp; &nbsp;...<br />
+                                &nbsp;&nbsp; &nbsp;&lt;span class=&quot;fix-currency fix-digits&quot; &gt;10000&lt;/span&gt;<br />
+                                &nbsp;&nbsp; &nbsp;...<br />
+                                &lt;/html&gt;
+                            </code>
+                        </p>
+                        <hr>
+                        <p>
+                            برای فیلد ها
+                            <input class="form-control fix-currency fix-digits" value="1200456771299">
+                        </p>
+                        <p class="fix-currency fix-digits mb-4">
+                            و در متن ها
+                            <span >1200456771299</span>
+                        </p>
+                        <hr>
+                        <h5 class="my-3">
+                            روش دوم با استفاده از متد تراز
+                        </h5>
+                        <p class="my-5 text-left">
+                            <code>$.fn.taraz(["currency" ,"digits"])</code>
+                        </p>
+                        <p class="fix-rtl">
+                            و یا با انتخاب تگ بدون نیاز به کلاس های <b>fix-digits</b> و <b>fix-currency</b>
+                        </p>
+                        <p class="my-5 text-left">
+                            <code>
+                                $("&lt;selector&gt;").taraz(["currency" ,"digits"]);
+                            </code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
